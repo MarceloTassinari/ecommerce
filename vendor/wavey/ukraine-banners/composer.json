@@ -1,0 +1,56 @@
+{
+    "name": "wavey/ukraine-banners",
+    "description": "🇺🇦 Ukraine Support Banners for your Laravel Application.",
+    "keywords": [
+        "wavey",
+        "laravel",
+        "ukraine",
+        "standwithukraine"
+    ],
+    "support": {
+        "issues": "https://github.com/waveygroup/ukraine-banners-laravel/issues",
+        "source": "https://github.com/waveygroup/ukraine-banners-laravel"
+    },
+    "homepage": "https://github.com/waveygroup/ukraine-banners-laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kieran Heron",
+            "email": "kieran@wavey.group",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "pestphp/pest": "^1.20",
+        "spatie/ray": "^1.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wavey\\UkraineBanners\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Wavey\\UkraineBanners\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Wavey\\UkraineBanners\\UkraineBannersServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

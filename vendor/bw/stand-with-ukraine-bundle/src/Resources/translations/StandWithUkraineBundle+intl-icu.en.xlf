@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="file.ext" source-language="en" target-language="en" datatype="plaintext">
+        <body>
+            <trans-unit id="1">
+                <source>stand_with_ukraine.banner.text</source>
+                <target><![CDATA[{brandName} stands <span class="hidden-xs">united</span> with <span class="hidden-xs">the people of</span> Ukraine]]></target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>stand_with_ukraine.access_denied.text</source>
+                <target><![CDATA[Russian warship, go f<span data="censorship">u</span>ck yourself! © 🇺🇦]]></target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>stand_with_ukraine.access_denied.link</source>
+                <target>https://en.wikipedia.org/wiki/Russian_warship,_go_fuck_yourself</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>stand_with_ukraine.access_denied.why</source>
+                <target>Why?</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>stand_with_ukraine.access_denied.fix</source>
+                <target>How to fix?</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

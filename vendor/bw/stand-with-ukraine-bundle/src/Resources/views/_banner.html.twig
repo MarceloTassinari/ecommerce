@@ -1,0 +1,63 @@
+<!-- start_swu -->
+<style>
+    .swu_container a {
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
+    .swu_container a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+    .swu_container .text-left {
+        text-align: left;
+    }
+    .swu_container .text-right {
+        text-align: right;
+    }
+    .swu_container {
+        padding: 15px;
+        font-size: 18px;
+        color: white;
+        background-color: black;
+    }
+    .swu_container:hover {
+        background-color: #202020;
+    }
+    .swu_table {
+        display: table;
+        margin: 0 auto;
+    }
+    .swu_cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .swu_flag {
+        display: flex;
+        height: 30px;
+        margin-right: 10px;
+    }
+</style>
+
+{% if targetUrl %}
+<a href="{{ targetUrl }}" rel="nofollow" referrerpolicy="origin-when-cross-origin">
+{% endif %}
+    <div class="swu_container">
+        <div class="swu_table">
+            <div class="swu_cell text-right">
+                <svg class="swu_flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+                    <rect width="1200" height="800" fill="#005BBB"></rect>
+                    <rect width="1200" height="400" y="400" fill="#FFD500"></rect>
+                </svg>
+            </div>
+            <div class="swu_cell text-left">
+                {{ 'stand_with_ukraine.banner.text'|trans({
+                    'brandName': brandName|default(httpHost)
+                }, 'StandWithUkraineBundle')|raw }}
+            </div>
+        </div>
+    </div>
+{% if targetUrl %}
+</a>
+{% endif %}
+<!-- end_swu -->
