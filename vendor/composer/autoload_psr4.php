@@ -31,7 +31,7 @@ return array(
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'Hcode\\' => array($vendorDir . '/hcodebr/php-classes/src'),
     'BW\\StandWithUkraineBundle\\Tests\\' => array($vendorDir . '/bw/stand-with-ukraine-bundle/tests'),
     'BW\\StandWithUkraineBundle\\' => array($vendorDir . '/bw/stand-with-ukraine-bundle/src'),
-    '' => array($vendorDir . '/hcodebr/php-classes/src'),
 );
