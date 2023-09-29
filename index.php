@@ -3,22 +3,26 @@
 // verifica se o arquivo já foi incluido
 require_once("vendor/autoload.php");
 
-// o modo slim ficou configurado o debug, onde
-// todo erro vai ficar explicado o que aconteceu no erro
-$app = new \Slim\Slim();
+// definindo os caminhos (namespaces)
+use \Slim\Slim;
+use \Hcode\Page;
+
+$app = new Slim();
 
 $app->config('debug', true);
 
 // foi criada a rota principal com / que está dando o OK
 $app->get('/', function() {
     
-//	echo "OK"; (foi substituído por...)	
-	$sql = new Hcode\DB\Sql();
-	$results = $sql->select("SELECT * FROM tb_users");
-	echo json_encode($results);
+	$page = new Page();
+	// aqui irá chamar o construct e vai adicionar o "header" na tela
 
+	$page->setTpl("index");
+	// aqui irá adicionar o arquivo que tem o conteúdo "h1" (Hello!)
+	// aqui acaba a execução, o php vai limpar a memória do código e vai chamar o destruct que irá adicionar o footer.
 });
 
 $app->run();
+// essa linha que carrega tudo então
 
  ?>
