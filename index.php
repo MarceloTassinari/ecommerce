@@ -6,6 +6,7 @@ require_once("vendor/autoload.php");
 // definindo os caminhos (namespaces)
 use \Slim\Slim;
 use \Hcode\Page;
+use \Hcode\PageAdmin;
 
 $app = new Slim();
 
@@ -15,6 +16,17 @@ $app->config('debug', true);
 $app->get('/', function() {
     
 	$page = new Page();
+	// aqui irá chamar o construct e vai adicionar o "header" na tela
+
+	$page->setTpl("index");
+	// aqui irá adicionar o arquivo que tem o conteúdo "h1" (Hello!)
+	// aqui acaba a execução, o php vai limpar a memória do código e vai chamar o destruct que irá adicionar o footer.
+});
+
+// foi criada a rota principal com /admin para a Administração
+$app->get('/admin/', function() {
+    
+	$page = new PageAdmin();
 	// aqui irá chamar o construct e vai adicionar o "header" na tela
 
 	$page->setTpl("index");

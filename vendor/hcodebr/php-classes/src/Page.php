@@ -1,13 +1,12 @@
 <?php 
 
 /* C:\xampp\htdocs\ecommerce\vendor\hcodebr\php-classes\src\page.php
-classe page servira de base para praticamente todas
-as telas que serão exibidas, onde termos:
+classe page irá gerenciar praticamente todas as nossa telas, onde termos:
 - headers (cabecalho)
 - data (dados) - será passada para o template
 - footer (rodape) */
 
-// namespace de onde esta classe Page está
+// namespace de onde esta classe (Page) está
 namespace Hcode;
 
 // define que a classe Tpl está no namespace Rain/Tpl (diferente de Hcode)
@@ -33,7 +32,7 @@ class Page {
 	];
 
 	// método construtor
-	public function __construct($opts = array())
+	public function __construct($opts = array(), $tpl_dir = "/views/")
 	{
 
 		/* será feito um merge [mesclar] dos dois arrays
@@ -48,7 +47,7 @@ class Page {
 		- false no debug para não colocar os comentários */
 		$config = array(
 		    "base_url"      => null,
-		    "tpl_dir"       => $_SERVER['DOCUMENT_ROOT']."/views/",
+		    "tpl_dir"       => $_SERVER['DOCUMENT_ROOT'].$tpl_dir,
 		    "cache_dir"     => $_SERVER['DOCUMENT_ROOT']."/views-cache/",
 		    "debug"         => false
 		);
