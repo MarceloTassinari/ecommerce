@@ -57,7 +57,11 @@ class Util
      */
     public static function stripSlashesIfMagicQuotes($rawData, $overrideStripSlashes = null)
     {
-        $strip = is_null($overrideStripSlashes) ? get_magic_quotes_gpc() : $overrideStripSlashes;
+        /**
+         * A partir da versão PHP 7.4 do php esse plugin (get_magic_quotes_gpc()) é considerado como obsoleto, portanto, não recomendo habilita-lo no php.ini. Feita a troca na linha abaixo.
+         **/
+        //$strip = is_null($overrideStripSlashes) ? get_magic_quotes_gpc() : $overrideStripSlashes;
+        $strip = is_null($overrideStripSlashes) ? false : $overrideStripSlashes;
         if ($strip) {
             return self::stripSlashes($rawData);
         }

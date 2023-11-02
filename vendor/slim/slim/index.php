@@ -1,33 +1,33 @@
 <?php
 /**
- * Step 1: Require the Slim Framework
+ * Etapa 1: Exigir o Slim Framework
  *
- * If you are not using Composer, you need to require the
- * Slim Framework and register its PSR-0 autoloader.
+ * Se você não estiver usando o Composer, você precisará solicitar o
+ * Slim Framework e registre seu autoloader PSR-0
  *
- * If you are using Composer, you can skip this step.
+ * Se estiver usando o Composer, você pode pular esta etapa.
  */
 require 'Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
 
 /**
- * Step 2: Instantiate a Slim application
+ * Etapa 2: Instanciar uma aplicação Slim
  *
- * This example instantiates a Slim application using
- * its default settings. However, you will usually configure
- * your Slim application now by passing an associative array
- * of setting names and values into the application constructor.
+ * Este exemplo instancia um aplicativo Slim usando
+ * suas configurações padrão. No entanto, você normalmente configurará
+ * seu aplicativo Slim agora passando um array associativo
+ * de definir nomes e valores no construtor do aplicativo.
  */
 $app = new \Slim\Slim();
 
 /**
- * Step 3: Define the Slim application routes
+ * Etapa 3: Definir as rotas de aplicação do Slim
  *
- * Here we define several Slim application routes that respond
- * to appropriate HTTP request methods. In this example, the second
- * argument for `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
- * is an anonymous function.
+ * Aqui definimos diversas rotas de aplicativos Slim que respondem
+ * para métodos de solicitação HTTP apropriados. Neste exemplo, o segundo
+ * argumento para `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch` e `Slim::delete`
+ * é uma função anônima.
  */
 
 // GET route
@@ -161,9 +161,9 @@ $app->delete(
 );
 
 /**
- * Step 4: Run the Slim application
+ * Etapa 4: Execute o aplicativo Slim
  *
- * This method should be called last. This executes the Slim application
- * and returns the HTTP response to the HTTP client.
+ * Este método deve ser chamado por último. Isso executa o aplicativo Slim
+ * e retorna a resposta HTTP ao cliente HTTP.
  */
 $app->run();
