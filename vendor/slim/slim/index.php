@@ -15,7 +15,7 @@ require 'Slim/Slim.php';
  * Etapa 2: Instanciar uma aplicação Slim
  *
  * Este exemplo instancia um aplicativo Slim usando
- * suas configurações padrão. No entanto, você normalmente configurará
+ * suas configurações padrões. No entanto, você normalmente configurará
  * seu aplicativo Slim agora passando um array associativo
  * de definir nomes e valores no construtor do aplicativo.
  */

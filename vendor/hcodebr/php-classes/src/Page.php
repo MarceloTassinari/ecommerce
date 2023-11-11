@@ -1,17 +1,22 @@
 <?php 
 
-/* C:\ecommerce\vendor\hcodebr\php-classes\src\page.php
-classe page irá gerenciar praticamente todas as nossa telas, onde termos:
-- headers (cabecalho)
-- data (dados) - será passada para o template
-- footer (rodape) */
+/** C:\ecommerce\vendor\hcodebr\php-classes\src\page.php
+ * classe page irá gerenciar praticamente todas as nossa telas, onde termos:
+ * - headers (cabecalho)
+ * - index (escopo da página) - data (dados) - será passada para o template
+ * - footer (rodape)
+ **/
 
-// declarando o namespace: portanto, a classe Page estará relacionada ao namespace Hcode
+/** declarando o namespace
+ * Portanto, a classe Page estará relacionada ao namespace Hcode
+ **/
 namespace Hcode;
 
-// define que a classe Tpl está no namespace Rain/Tpl (diferente de Hcode)
-// quando chamar a classe Tpl saberá o path correto
-// nota; TPL está em c:\ecommerce\vendor\rain\raintpl\library\Rain
+/**
+ * use: define que a classe Tpl está no namespace Rain/Tpl (diferente de Hcode)
+ * quando chamar a classe Tpl saberá o path correto
+ * nota: TPL está em c:\ecommerce\vendor\rain\raintpl\library\Rain
+ **/
 use Rain\Tpl;
 
 class Page {
@@ -19,28 +24,34 @@ class Page {
 	// atributo somente declarado
 	private $tpl;
 	
-	// array vazio
+	// atributo declarado, sendo um array vazio
 	private $options = [];
 	
 	/** variaveis defaults
 	* headers (cabecalho) - por padrão, ativo
 	* footer (rodape) - por padrão, ativo
 	* data (dados) - array vazio - será passada para o template
-	* Nota: nas página onde não couber o cabelhaço e rodapé (p.ex. login), será mandado false para ambos */
+	* Nota: nas página onde não couber o cabelhaço e rodapé (p.ex. login), será mandado false para ambos
+	**/
 	private $defaults = [
 		"header"=>true,
 		"footer"=>true,
 		"data"=>[]
 	];
 
-	// método construtor
+	/** método construtor
+	 * $tpl_dir:	rota do template (=modelo)
+	 **/
 	public function __construct($opts = array(), $tpl_dir = "/views/")
 	{
 
 		//$this->defaults["data"]["session"] = $_SESSION;
 
-		/* será feito um merge [mesclar] dos dois arrays
-		na sequencia, o posterior sempre sobrescreve o anterior e guarda em $this->options */
+		/** merge (=mesclar)
+		 * será feito um merge dos dois arrays
+		 * na sequencia, o posterior sempre sobrescreve o anterior e guarda
+		 * em $this->options
+		 **/
 		$this->options = array_merge($this->defaults, $opts);
 
 		/* $_SERVER é uma variável de ambiente

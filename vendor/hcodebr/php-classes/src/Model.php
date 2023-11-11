@@ -28,7 +28,10 @@ class Model {
 		{
 			case "get":
 
-				$this->values[$fieldName];
+				return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : NULL;
+				//Nota: despassword não pode ser null
+				//return (isset($this->values[$fieldName]));
+				//if $this->values[$fieldName] = 
 
 			break;
 
