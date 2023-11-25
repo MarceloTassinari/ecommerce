@@ -1,5 +1,11 @@
 <?php 
 
+/**
+ * Esta página foi atualizada no curso
+ * Também query por runQuery
+ * https://github.com/hcodebr/ecommerce/blob/master/vendor/hcodebr/php-classes/src/Model/User.php
+ **/
+
 namespace Hcode\Model;
 
 use \Hcode\Model;

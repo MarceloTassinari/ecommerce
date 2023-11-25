@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>C:\ecommerce\vendor Namespace: Hcode</title>
+<style type="text/css">
+    li { list-style: none;  margin: 0; }
+    p { margin: 0; }
+
+    span.l { color: red; font-weight: bold; }
+
+    a.mapnode:link {text-decoration: none; color: black; }
+    a.mapnode:visited {text-decoration: none; color: black; }
+    a.mapnode:active {text-decoration: none; color: black; }
+    a.mapnode:hover {text-decoration: none; color: black; background: #eeeee0; }
+
+</style>
+<!-- ^ Position is not set to relative / absolute here because of Mozilla -->
+</head>
+<body>
+<p><span style="color: #6600ff;">C:\ecommerce\vendor
+<br>
+Namespace: Hcode</span>
+<ul><li>C:\ecommerce\vendor\bin
+
+</li>
+<li>C:\ecommerce\vendor\bw
+
+</li>
+<li>C:\ecommerce\vendor\composer
+<ul><li>autoload_real.php
+<ul><li>class ComposerAutoloaderInit
+<ul><li>private static $loader
+
+</li>
+<li>public static function loadClassLoader($class)
+
+</li>
+<li>public static function getLoader()
+<ul><li>return $loader;
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>C:\ecommerce\vendor\hcodebr
+
+</li>
+<li>C:\ecommerce\vendor\phpmailer
+
+</li>
+<li>C:\ecommerce\vendor\psr
+
+</li>
+<li>C:\ecommerce\vendor\rain
+
+</li>
+<li>C:\ecommerce\vendor\slim
+<ul><li>C:\ecommerce\vendor\slim\slim
+<ul><li>C:\ecommerce\vendor\slim\slim\slim
+<ul><li>slim.php
+<ul><li><span style="color: #6600ff;">C:\ecommerce\vendor\slim\slim\slim\slim
+<br>
+Namespace Slim;</span>
+
+</li>
+<li>class Slim
+<ul><li>Obtendo a inst&#226;ncia do aplicativo por nome
+<ul><li><p>public static function getInstance($name = 'default')
+<br>
+{ &nbsp;&nbsp;&nbsp;&nbsp;return isset(static::$apps[$name]) ? static::$apps[$name] : null;
+<br>
+}
+</li>
+</ul>
+</li>
+<li>Definir o nome do aplicativo Slim
+<ul><li><p>public function setName($name)
+<br>
+{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$this-&gt;name = $name;
+<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static::$apps[$name] = $this;
+<br>
+}
+</li>
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>index.php
+<ul><li>require 'Slim/Slim.php';
+<ul><li>chama C:\ecommerce\vendor\slim\slim\Slim\Slim.php
+
+</li>
+
+</ul>
+</li>
+<li>Slim\Slim::registerAutoloader();
+
+</li>
+<li>$app = new \Slim\Slim();
+
+</li>
+<li>$app-&gt;get('/', function () { $template = xxx; echo $template; } );
+
+</li>
+<li>$app-&gt;post('/post', function () { echo 'This is a POST route'; } );
+
+</li>
+<li>$app-&gt;put('/put', function () { echo 'This is a PUT route'; } );
+
+</li>
+<li>$app-&gt;patch('/patch', function () { echo 'This is a PATCH route'; } );
+
+</li>
+<li>$app-&gt;delete('/delete', function () { echo 'This is a DELETE route'; } );
+
+</li>
+<li>$app-&gt;run();
+
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+
+</ul>
+</li>
+<li>C:\ecommerce\vendor\symfony
+
+</li>
+<li>C:\ecommerce\vendor\twig
+
+</li>
+<li>C:\ecommerce\vendor\wavey
+
+</li>
+<li>autoload.php
+<ul><li>require_once __DIR__ . '/composer/autoload_real.php';
+
+</li>
+<li>return ComposerAutoloaderInit2ea54c676063654c27789fd170a14135::getLoader();
+
+</li>
+
+</ul>
+</li>
+
+</ul></body>
+</html>

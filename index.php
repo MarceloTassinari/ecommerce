@@ -22,11 +22,13 @@ require_once("vendor/autoload.php");
  *	3. a classe Page do namespace Hcode, para a página inicial.
  *	4. a classe PageAdmin do namespace Hcode, para a página da Administração.
  *	5. a classe User do namespace Hcode/Model, para ...
+ *  6. a classe Categories de Model para listar todas as categorias
  */
 use \Slim\Slim;
 use \Hcode\Page;
 use \Hcode\PageAdmin;
 use \Hcode\Model\User;
+use \Hcode\Model\Category;
 
 /**
  * instancia a classe slim() que fornece as rotas.
@@ -325,7 +327,7 @@ $app->get("/admin/forgot/sent", function(){
 	$page->setTpl("forgot-sent");
 });
 
-$app->get("\admin/forgot/reset", function(){
+$app->get("/admin/forgot/reset", function(){
 
 	$user = User::validForgotDecrypt($_GET["code"]);
 
@@ -341,7 +343,7 @@ $app->get("\admin/forgot/reset", function(){
 
 });
 
-$app->post("\admin/forgot/reset", function(){
+$app->post("/admin/forgot/reset", function(){
 
 	$forgot = User::validForgotDecrypt($_POST["code"]);
 
@@ -363,6 +365,123 @@ $app->post("\admin/forgot/reset", function(){
 	]);
 
 	$page->setTpl("forgot-reset-sucess");
+
+});
+/**
+ * Rota para acessar o template de categorias
+ **/
+$app->get("/admin/categories", function(){
+
+	User::verifyLogin();
+
+	/**
+	 * Classe category() chamando listAll
+	 **/
+	$categories = Category::listAll();
+
+	$page = new PageAdmin();
+
+	/**
+	 * O arquivo categories.html espera receber $categories
+	 **/
+	$page->setTpl("categories", [
+		'categories'=>$categories
+	]);
+
+});
+
+/**
+ * Rota para criar a categoria
+ **/
+$app->get("/admin/categories/create", function(){
+
+	User::verifyLogin();
+
+	$page = new PageAdmin();
+
+	/**
+	 * O arquivo categories.html espera receber $categories
+	 **/
+	$page->setTpl("categories-create");
+
+});
+
+/**
+ * Rota para criar a página da categoria
+ **/
+$app->post("/admin/categories/create", function(){
+
+	User::verifyLogin();
+
+	$category = new Category();
+
+	$category->setData($_POST);
+
+	$category->save();
+
+	header('Location: /admin/categories');	
+	exit;	
+
+});
+
+/**
+ * Rota para deletar uma categoria
+ **/
+$app->get("/admin/categories/:idcategory/delete", function($idcategory)
+{
+
+	User::verifyLogin();
+
+	$category = new Category();
+
+	$category->get((int)$idcategory);
+
+	$category->delete();
+
+	header('Location: /admin/categories');	
+	exit;	
+
+});
+
+/**
+ * Rota para alterar uma categoria
+ **/
+$app->get("/admin/categories/:idcategory", function($idcategory)
+{
+
+	User::verifyLogin();
+
+	$category = new Category();
+
+	$category->get((int)$idcategory);
+
+	$page = new PageAdmin();
+
+	/**
+	 * O arquivo categories.html espera receber $categories
+	 **/
+	$page->setTpl("categories-update", [
+		'category'=>$category->getValues()
+	]);
+
+});
+
+$app->post("/admin/categories/:idcategory", function($idcategory)
+{
+
+	User::verifyLogin();
+
+	$category = new Category();
+
+	$category->get((int)$idcategory);
+
+	// carrego com o que receber do post (formulário)
+	$category->setData($_POST);
+
+	$category->save();
+
+	header('Location: /admin/categories');	
+	exit;	
 
 });
 
